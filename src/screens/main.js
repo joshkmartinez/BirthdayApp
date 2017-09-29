@@ -36,18 +36,15 @@ export default class Main extends Component {
                     justifyContent: 'center',
                 }}>
 
-                <Calendar style={{
+                <Calendar 
+                style={{
                     borderWidth: 3,
                     borderColor: 'whitesmoke',
                     //height: 100,
-                    }}>
-                    
+                    }}
+
                     // Initially visible month. Default = Date()
                     current={'2003-08-06'}
-                    // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-                    minDate={'1800-1-1'}
-                    // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-                    maxDate={'2021-12-30'}
                     // Handler which gets executed on day press. Default = undefined
                     onDayPress={(day) => {console.log('selected day', day)}}
                     // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
@@ -55,13 +52,13 @@ export default class Main extends Component {
                     // Handler which gets executed when visible month changes in calendar. Default = undefined
                     onMonthChange={(month) => {console.log('month changed', month)}}
                     // Replace default arrows with custom ones (direction can be 'left' or 'right')
-                    renderArrow={(direction) => (<Arrow />)}
+                    //renderArrow={(direction) => (<Arrow />)}
                     // Do not show days of other months in month page. Default = false
                     hideExtraDays={true}
                     // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
                     firstDay={1}
                     
-                </Calendar>
+                />
 
                 </View>
 
