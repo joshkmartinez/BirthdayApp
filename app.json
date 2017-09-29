@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0"
+    "sdkVersion": "20.0.0",
+    "BirthdayApp": "BirthdayApp",
+    "icon": "./resources/pics/icon.png",
+    "version": "1.0.0",
+    "slug": "Birthday-App-slug",
+    "ios": {
+      "bundleIdentifier": "com.joshuamartinez.BirthdayApp"
+    },
+    "android": {
+      "package": "com.joshuamartinez.BirthdayApp"
+    }
   }
 }
