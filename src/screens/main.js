@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native'; //must import stuff
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars'; //for calander component
-import { createStore } from "redux"; //redux
+import { createStore } from "redux"; //redux import
 
 export default class Main extends Component {
     render () {
@@ -10,14 +10,15 @@ export default class Main extends Component {
                 //styles.wrapper,
                 backgroundColor: '#ecf0f1', //clouds color
                 flex: 1,
-                justifyContent: 'center', //content (text) is centered vertically
+                flexDirection: 'column', //stack things verically
+                justifyContent: 'space-around', //content (text) is centered vertically
                 alignItems: 'center', //align content horizontally
                 //styling the text elements
             }}>
                 <View style={{
                     //alignItems: 'bottom',
                     //backgroundColor: 'whitesmoke', //use different background color to see size
-                    flex: 0.21,
+                    //flex: 0.21,
                     //justifyContent: ''
                 }}>
                     <Text style={{
@@ -33,7 +34,7 @@ export default class Main extends Component {
 
                 <View style={{
                     //backgroundColor: 'whitesmoke',
-                    flex: 0.64,
+                    flex: 0.50,
                     justifyContent: 'center',
                 }}>
 
@@ -49,9 +50,9 @@ export default class Main extends Component {
                     // Handler which gets executed on day press. Default = undefined
                     onDayPress={(day) => {console.log('selected day', day)}}
                     // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-                    monthFormat={'yyyy MM'}
+                    monthFormat={'MMMM yyyy'}
                     // Handler which gets executed when visible month changes in calendar. Default = undefined
-                    onMonthChange={(month) => {console.log('month changed', month)}}
+                    //onMonthChange={(month) => {console.log('month changed', month)}}
                     // Replace default arrows with custom ones (direction can be 'left' or 'right')
                     //renderArrow={(direction) => (<Arrow />)}
                     // Do not show days of other months in month page. Default = false
@@ -71,8 +72,8 @@ export default class Main extends Component {
                     <Text style={{
                         color: 'grey',
                         fontWeight: '100',
-                        fontSize: 17,
-                        flex: 0.3
+                        fontSize: 13,
+                        //flex: 0.3
                         
                     }}> 
                         It might be your birthday... 
@@ -87,5 +88,6 @@ const styles = {
     wrapper: {
         //backgroundColor: 'blue',
         //make things cleaner by storing styles in object
+        // pass the styles like styles.wrapper
     }
 }
