@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native'; //must import stuff
+import { StyleSheet, Text, View, Alert } from 'react-native'; //must import stuff
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars'; //for calander component
-import { createStore } from "redux"; //redux import
+//import { createStore } from "redux"; //redux import
+
+
+var date = new Date();
+var dayt = date.getDate(); //get date
+var montht = date.getMonth()+1;
+console.log(dayt, montht)
 
 export default class Main extends Component {
     render () {
@@ -48,7 +54,19 @@ export default class Main extends Component {
                     // Initially visible month. Default = Date()
                     current={'2003-08-06'}
                     // Handler which gets executed on day press. Default = undefined
-                    onDayPress={(day) => {console.log('selected day', day)}}
+                    onDayPress={(day) => { console.log('selected day', day)
+                    var day = day.day
+                    //console.log(day)
+                    var month = day.month
+                    console.log(month) // why is month underfined?
+                        if (dayt === day && montht === month) {
+                            Alert.alert('TODAY IS YOUR BIRTHDAY!!', 'please exept this automated birthday congradulations!', [{text: 'Thanks!'}]);
+                        } else {
+                            Alert.alert('Today is not your bithday....', 'please try again tommorow', [{text: 'Ok...'}]);
+                        }
+                        
+                        }}
+                    //on press make if birthday alert
                     // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
                     monthFormat={'MMMM yyyy'}
                     // Handler which gets executed when visible month changes in calendar. Default = undefined
