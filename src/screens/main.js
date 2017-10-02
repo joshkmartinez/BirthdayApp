@@ -7,7 +7,7 @@ import { Calendar, CalendarList, Agenda } from 'react-native-calendars'; //for c
 let date = new Date();
 let dayt = date.getDate(); //get date
 let montht = date.getMonth()+1;
-console.log(dayt, montht)
+console.log("Current day: " + dayt, "Current month number: " + montht)
 
 export default class Main extends Component {
     render () {
@@ -54,15 +54,15 @@ export default class Main extends Component {
                     // Initially visible month. Default = Date()
                     current={'2003-08-06'}
                     // Handler which gets executed on day press. Default = undefined
-                    onDayPress={(day) => { console.log('selected day', day)
+                    onDayPress={(day) => { console.log('The selected dasy info is:', day)
                     let days = day.day
                     //console.log(day)
                     let month = day.month
                     //console.log(month) // why is month underfined?
                         if (dayt === days && montht === month) {
-                            Alert.alert('TODAY IS YOUR BIRTHDAY!!', 'please exept this automated birthday congradulations!', [{text: 'Thanks!'}]);
+                            Alert.alert('TODAY IS YOUR BIRTHDAY!!', 'Please exept these automated birthday congradulations!', [{text: 'Thanks!'}]);
                         } else {
-                            Alert.alert('Today is not your bithday....', 'please try again tommorow', [{text: 'Ok...'}]);
+                            Alert.alert('Today is not your birthday', 'Please try again tommorow', [{text: 'Fine...'}]);
                         }
                         
                         }}
